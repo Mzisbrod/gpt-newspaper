@@ -4,11 +4,6 @@ Welcome to the GPT Newspaper project, an innovative autonomous agent designed to
 
 ## 🔍 Overview
 
-<div align="center">
-<img align="center" height="500" src="https://tavily-media.s3.amazonaws.com/GPT+Newspaper+Flow.png">
-</div>
-
-
 GPT Newspaper consists of five specialized sub-agents:
 
 1. **Search Agent**: Scours the web for the latest and most relevant news.
@@ -18,6 +13,12 @@ GPT Newspaper consists of five specialized sub-agents:
 5. **Editor Agent**: Ensures the quality and accuracy of the content before publication.
 
 Each agent plays a critical role in delivering a unique and personalized newspaper experience.
+
+<div align="center">
+<img align="center" height="500" src="https://tavily-media.s3.amazonaws.com/GPT+Newspaper+Flow.png">
+</div>
+
+
 
 ## 🌟 Features
 
