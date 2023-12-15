@@ -9,8 +9,8 @@ GPT Newspaper consists of five specialized sub-agents:
 1. **Search Agent**: Scours the web for the latest and most relevant news.
 2. **Curator Agent**: Filters and selects news based on user-defined preferences and interests.
 3. **Writer Agent**: Crafts engaging and reader-friendly articles.
-4. **Designer Agent**: Layouts and designs the newspaper for an aesthetically pleasing reading experience.
-5. **Editor Agent**: Ensures the quality and accuracy of the content before publication.
+4. **Designer Agent**: Layouts and designs the articles for an aesthetically pleasing reading experience.
+5. **Editor Agent**: constructs the newspaper based on produced articles.
 
 Each agent plays a critical role in delivering a unique and personalized newspaper experience.
 
