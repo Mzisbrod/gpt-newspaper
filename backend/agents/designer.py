@@ -21,7 +21,7 @@ class DesignerAgent:
             html_template = html_template.replace(f"{{paragraph{i+1}}}", paragraphs[i])
         return html_template
 
-    def run(self, article, image=None):
+    def run(self, article):
         return self.designer(article)
 
 
