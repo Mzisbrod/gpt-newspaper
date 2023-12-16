@@ -1,0 +1,8 @@
+langchain
+permchain
+tavily-python
+BeautifulSoup4
+openai
+flask
+json5
+Flask-CORS
