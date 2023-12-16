@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Custom Newspaper</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gpt Newspaper</h1>
+            <p>Select four topics of interest and get your personalized news.</p>
+        </header>
+
+        <section class="topic-selection">
+            <form id="topicForm">
+                <div class="form-group">
+                    <label for="topic1">Topic 1:</label>
+                    <input type="text" id="topic1" name="topic1" required>
+                </div>
+                <div class="form-group">
+                    <label for="topic2">Topic 2:</label>
+                    <input type="text" id="topic2" name="topic2" required>
+                </div>
+                <div class="form-group">
+                    <label for="topic3">Topic 3:</label>
+                    <input type="text" id="topic3" name="topic3" required>
+                </div>
+                <div class="form-group">
+                    <label for="topic4">Topic 4:</label>
+                    <input type="text" id="topic4" name="topic4" required>
+                </div>
+                <button type="button" id="produceNewspaper" onclick="produceNewspaper()">Produce Newspaper</button>
+            </form>
+        </section>
+
+        <section id="newspaper" class="hidden">
+            <!-- The newspaper articles will be populated here -->
+        </section>
+    </div>
+
+    <script src="static/scripts.js"></script>
+</body>
+</html>
