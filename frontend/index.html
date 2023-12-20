@@ -9,31 +9,32 @@
 <body>
     <div class="container">
         <header>
-            <h1>Gpt Newspaper</h1>
-            <p>Select four topics of interest and get your personalized news.</p>
-        </header>
+            <div class="header-content">
+                <h1>Gpt Newspaper</h1>
+            </div>
+            <p class="powered-by">Powered by <a href="https://tavily.com" target="_blank">Tavily</a></p>
+            <p>Select topics of interest and get your personalized newspaper.</p>
 
+        </header>
         <section class="topic-selection">
             <form id="topicForm">
-                <div class="form-group">
-                    <label for="topic1">Topic 1:</label>
+                <p>Topics:</p>
+                <div class="form-group" id="topicGroup1">
                     <input type="text" id="topic1" name="topic1" required>
+                    <span class="icon add-topic">+</span>
+                    <span class="icon remove-topic">🗑️</span>
                 </div>
-                <div class="form-group">
-                    <label for="topic2">Topic 2:</label>
-                    <input type="text" id="topic2" name="topic2" required>
-                </div>
-                <div class="form-group">
-                    <label for="topic3">Topic 3:</label>
-                    <input type="text" id="topic3" name="topic3" required>
-                </div>
-                <div class="form-group">
-                    <label for="topic4">Topic 4:</label>
-                    <input type="text" id="topic4" name="topic4" required>
-                </div>
-                    <button type="button" id="produceNewspaper">Produce Newspaper</button>
             </form>
+            <button type="button" id="produceNewspaper">Produce Newspaper</button>
+
+
         </section>
+
+        <section id="loading" class="hidden">
+                <div id="loadingMessages"></div>
+        </section>
+
+
 
         <section id="newspaper" class="hidden">
             <!-- The newspaper articles will be populated here -->
