@@ -4,7 +4,7 @@ Welcome to the GPT Newspaper project, an innovative autonomous agent designed to
 
 ## 🔍 Overview
 
-GPT Newspaper consists of five specialized sub-agents:
+GPT Newspaper consists of six specialized sub-agents in LangChain's new [LangGraph Library](https://github.com/langchain-ai/langgraph):
 
 1. **Search Agent**: Scours the web for the latest and most relevant news.
 2. **Curator Agent**: Filters and selects news based on user-defined preferences and interests.
