@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from backend.master_agent import MasterAgent
+from backend.langgraph_agent import MasterAgent
 
 backend_app = Flask(__name__)
 
@@ -14,3 +14,4 @@ def generate_newspaper():
     master_agent = MasterAgent()
     newspaper = master_agent.run(queries)
     return jsonify({"path": newspaper}), 200
+

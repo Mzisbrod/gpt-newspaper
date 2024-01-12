@@ -1,8 +1,7 @@
 from datetime import datetime
 from langchain.adapters.openai import convert_openai_messages
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 import json5 as json
-
 
 sample_json = """
 {
@@ -18,6 +17,7 @@ sample_json = """
     "summary": "2 sentences summary of the article"
 }
 """
+
 
 class WriterAgent:
     def __init__(self):
@@ -51,6 +51,6 @@ class WriterAgent:
         response = ChatOpenAI(model='gpt-4', max_retries=1).invoke(lc_messages).content
         return json.loads(response)
 
-
-    def run(self, query: str, sources: list):
-        return self.writer(query, sources)
+    def run(self, article: dict):
+        article.update(self.writer(article["query"], article["sources"]))
+        return article

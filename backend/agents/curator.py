@@ -1,6 +1,6 @@
 from datetime import datetime
 from langchain.adapters.openai import convert_openai_messages
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 
 
 class CuratorAgent:
@@ -10,11 +10,9 @@ class CuratorAgent:
     def curate_sources(self, query: str, sources: list):
         """
         Curate relevant sources for a query
-        :param query:
-        :param sources:
+        :param input:
         :return:
         """
-
         prompt = [{
             "role": "system",
             "content": "You are a personal newspaper editor. Your sole purpose is to choose 5 most relevant article "
@@ -39,5 +37,6 @@ class CuratorAgent:
                 sources.remove(i)
         return sources
 
-    def run(self, query: str, sources: list):
-        return self.curate_sources(query, sources)
+    def run(self, article: dict):
+        article["sources"] = self.curate_sources(article["query"], article["sources"])
+        return article

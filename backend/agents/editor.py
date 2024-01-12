@@ -1,20 +1,12 @@
 import os
 
+
 class EditorAgent:
-    def __init__(self, output_dir):
-        self.output_dir = output_dir
 
     def load_html_template(self):
-        with open("/Users/rotemweiss/Desktop/gpt-newspaper/backend/templates/newspaper/index.html") as f:
-            html_template = f.read()
-        return html_template
-
-    def save_newspaper_html(self, newspaper_html):
-        path = os.path.join(self.output_dir, "newspaper.html")
-        with open(path, 'w') as file:
-            file.write(newspaper_html)
-        return path
-
+        template_path = os.path.join(os.path.dirname(__file__), '..', 'templates', 'newspaper', 'index.html')
+        with open(template_path) as f:
+            return f.read()
 
     def editor(self, articles):
         html_template = self.load_html_template()
@@ -36,7 +28,8 @@ class EditorAgent:
             articles_html += article_html
 
         newspaper_html = html_template.replace("{{articles}}", articles_html)
-        return self.save_newspaper_html(newspaper_html)
+        return newspaper_html
 
     def run(self, articles):
-        return self.editor(articles)
+        res = self.editor(articles)
+        return res

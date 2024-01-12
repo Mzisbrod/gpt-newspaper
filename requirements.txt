@@ -1,5 +1,5 @@
 langchain
-permchain
+langgraph
 tavily-python
 BeautifulSoup4
 openai
