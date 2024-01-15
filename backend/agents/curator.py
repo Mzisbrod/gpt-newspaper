@@ -1,6 +1,6 @@
 from datetime import datetime
 from langchain.adapters.openai import convert_openai_messages
-from langchain_community.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 
 
 class CuratorAgent:

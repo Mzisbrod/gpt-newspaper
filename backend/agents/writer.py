@@ -24,12 +24,6 @@ class WriterAgent:
         pass
 
     def writer(self, query: str, sources: list):
-        """
-        Curate relevant sources for a query
-        :param query:
-        :param sources:
-        :return:
-        """
 
         prompt = [{
             "role": "system",
@@ -51,6 +45,30 @@ class WriterAgent:
         response = ChatOpenAI(model='gpt-4', max_retries=1).invoke(lc_messages).content
         return json.loads(response)
 
+    def revise(self, article: dict):
+        prompt = [{
+            "role": "system",
+            "content": "You are a newspaper editor. Your sole purpose is to edit a well-written article about a "
+                       "topic based on given critique\n "
+        }, {
+            "role": "user",
+            "content": f"{str(article)}\n"
+                        f"Your task is to edit the article based on the critique given.\n "
+                        f"Please return json format of the 'paragraphs' and a new 'message' field"
+                        f"to the critique that explain your changes"
+                       f"or why you didn't change anything.\n"
+
+        }]
+
+        lc_messages = convert_openai_messages(prompt)
+        response = ChatOpenAI(model='gpt-4', max_retries=1).invoke(lc_messages).content
+        print(response)
+        return json.loads(response)
+
     def run(self, article: dict):
-        article.update(self.writer(article["query"], article["sources"]))
+        critique = article.get("critique")
+        if critique is not None:
+            article.update(self.revise(article))
+        else:
+            article.update(self.writer(article["query"], article["sources"]))
         return article
