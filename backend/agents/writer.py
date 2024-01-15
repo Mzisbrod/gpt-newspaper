@@ -18,6 +18,19 @@ sample_json = """
 }
 """
 
+sample_revise_json = """
+{
+    "paragraphs": [
+        "paragraph 1",
+        "paragraph 2",
+        "paragraph 3",
+        "paragraph 4",
+        "paragraph 5",
+    ],
+    "message": "message to the critique"
+}
+"""
+
 
 class WriterAgent:
     def __init__(self):
@@ -55,8 +68,9 @@ class WriterAgent:
             "content": f"{str(article)}\n"
                         f"Your task is to edit the article based on the critique given.\n "
                         f"Please return json format of the 'paragraphs' and a new 'message' field"
-                        f"to the critique that explain your changes"
-                       f"or why you didn't change anything.\n"
+                        f"to the critique that explain your changes or why you didn't change anything.\n"
+                        f"please return nothing but a JSON in the following format:\n"
+                        f"{sample_revise_json}\n "
 
         }]
 
