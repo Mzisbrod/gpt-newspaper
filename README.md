@@ -48,7 +48,7 @@ Each agent plays a critical role in delivering a unique and personalized newspap
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/rotem5707/gpt-newspaper.git
+   git clone https://github.com/rotemweiss57/gpt-newspaper.git
     ```
 2. Export your API Keys
    ```sh
