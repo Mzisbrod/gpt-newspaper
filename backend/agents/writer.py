@@ -76,8 +76,10 @@ class WriterAgent:
 
         lc_messages = convert_openai_messages(prompt)
         response = ChatOpenAI(model='gpt-4', max_retries=1).invoke(lc_messages).content
-        print(response)
-        return json.loads(response)
+        response = json.loads(response)
+        print(f"For article: {article['title']}")
+        print(f"Writer Revision Message: {response['message']}\n")
+        return response
 
     def run(self, article: dict):
         critique = article.get("critique")
