@@ -5,8 +5,12 @@ class DesignerAgent:
     def __init__(self, output_dir):
         self.output_dir = output_dir
 
+
     def load_html_template(self):
-        with open("/Users/rotemweiss/Desktop/gpt-newspaper/backend/templates/article/index.html") as f:
+        relative_path = "../templates/article/index.html"
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        html_file_path = os.path.join(dir_path, relative_path)
+        with open(html_file_path) as f:
             html_template = f.read()
         return html_template
 
