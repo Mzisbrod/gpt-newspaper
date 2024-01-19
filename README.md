@@ -16,7 +16,7 @@ GPT Newspaper consists of six specialized sub-agents in LangChain's new [LangGra
 Each agent plays a critical role in delivering a unique and personalized newspaper experience.
 
 <div align="center">
-<img align="center" height="500" src="https://tavily-media.s3.amazonaws.com/GPT+Newspaper+Flow.png">
+<img align="center" height="500" src="https://tavily-media.s3.amazonaws.com/gpt-newspaper-architecture.png">
 </div>
 
 
@@ -48,7 +48,7 @@ Each agent plays a critical role in delivering a unique and personalized newspap
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/rotem5707/gpt-newspaper.git
+   git clone https://github.com/rotemweiss57/gpt-newspaper.git
     ```
 2. Export your API Keys
    ```sh
